@@ -4,6 +4,7 @@ import 'package:wechat/Lifecycle/LifeCycleStateful.dart';
 import 'package:wechat/async/async_main.dart';
 import 'package:wechat/basewidget/ChannelWidget.dart';
 import 'package:wechat/basewidget/LifeWidget.dart';
+import 'package:wechat/listview/listview_main.dart';
 import 'package:wechat/mvvm/page_router.dart';
 import 'package:wechat/principle/BottomComponent.dart';
 import 'package:wechat/principle/ButtonDemo.dart';
@@ -25,7 +26,6 @@ import 'package:wechat/state/provider4/Provider4App.dart';
 import 'package:wechat/state/redux/redux_main.dart';
 import 'package:wechat/state/setstate/myhome_state.dart';
 import 'package:wechat/state/stream/count_page.dart';
-import 'package:wechat/widget/listview/listview_main.dart';
 
 class Discover extends StatefulWidget {
   @override
@@ -43,7 +43,7 @@ class _DiscoverState extends State<Discover> {
 
 //GridView.count
   Widget gridViewCount() {
-    return new GridView.count(
+    return GridView.count(
       //水平子Widget之间间距
       crossAxisSpacing: 10.0,
       //垂直子Widget之间间距
@@ -90,134 +90,127 @@ class _DiscoverState extends State<Discover> {
   }
 
   Widget _provider4Widget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new Provider4App();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return Provider4App();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Provider4',
-            style: new TextStyle(color: Colors.blue, fontSize: 13.0)),
+        child: Text('Provider4', style: TextStyle(color: Colors.blue, fontSize: 13.0)),
       ),
     );
   }
 
   Widget _provider3Widget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new Provider3App();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return Provider3App();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Provider3',
-            style: new TextStyle(color: Colors.blue, fontSize: 13.0)),
+        child: Text('Provider3', style: TextStyle(color: Colors.blue, fontSize: 13.0)),
       ),
     );
   }
 
   Widget _provider2Widget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new ProviderApp();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return ProviderApp();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Provider',
-            style: new TextStyle(color: Colors.blue, fontSize: 13.0)),
+        child: Text('Provider', style: TextStyle(color: Colors.blue, fontSize: 13.0)),
       ),
     );
   }
 
   Widget _routerWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new RouterMain();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return RouterMain();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('路由',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('路由', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _routeTransitonWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new RouteTransitionMain();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return RouteTransitionMain();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('路由动画',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('路由动画', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _asyncWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new AsyncMain();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return AsyncMain();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('async',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('async', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _setStateWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new Myhome_State();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return Myhome_State();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('setState',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('setState', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
@@ -225,7 +218,7 @@ class _DiscoverState extends State<Discover> {
   Widget _inhertatiteWidget(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
           return MyInheratite();
         }));
       },
@@ -235,371 +228,350 @@ class _DiscoverState extends State<Discover> {
           borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: Text('inherited',
-            style: TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('inherited', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _streamWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new CountPage();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return CountPage();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Stream',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('Stream', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _providerWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new ProviderMain();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return ProviderMain();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Provider',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('Provider', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _BlocWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new BlocMain();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return BlocMain();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Bloc',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('Bloc', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _ReduxMainWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new ReduxMain();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return ReduxMain();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Redux',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('Redux', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _HomePageWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new page_router();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return page_router();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('MVVM',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('MVVM', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _lifelessWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new LifeCycleStateful();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return LifeCycleStateful();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Stateful',
-            style: new TextStyle(color: Colors.blue, fontSize: 15.0)),
+        child: Text('Stateful', style: TextStyle(color: Colors.blue, fontSize: 15.0)),
       ),
     );
   }
 
   Widget _lifeWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new LifeCycleStateLess();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return LifeCycleStateLess();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('StateLess',
-            style: new TextStyle(color: Colors.blue, fontSize: 14.0)),
+        child: Text('StateLess', style: TextStyle(color: Colors.blue, fontSize: 14.0)),
       ),
     );
   }
 
   Widget _OverdrawWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new Overdraw();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return Overdraw();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('绘制',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('绘制', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   Widget _PluginWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new PluginDemo();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return PluginDemo();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Plugin',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('Plugin', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   Widget _SharedWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new SharedPreference();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return SharedPreference();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Shared',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('Shared', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   Widget _CircleProgressBarWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new CircleProgressBar();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return CircleProgressBar();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Paint',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('Paint', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   Widget _ButtonWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new ButtonDemo();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return ButtonDemo();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Button',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('Button', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   Widget _OffstateOpacityWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new OffstateOpacity();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return OffstateOpacity();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('显示',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('显示', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   Widget _BottomComponentWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new BottomComponent();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return BottomComponent();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('封装',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('封装', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   Widget _ChannelWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new ChannelWidget();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return ChannelWidget();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('通信',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('通信', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   Widget _BaseWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new LifeWidget();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return LifeWidget();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('生命周期',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('生命周期', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   //  TurnBox
   Widget _ListviewDemo(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new ListViewMain();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return ListViewMain();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Listview',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('Listview', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   //  TurnBox
   Widget _ExpandDemo(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-          return new ExpandDemo();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return ExpandDemo();
         }));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Expand',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('Expand', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
 
   //  TurnBox
   Widget _MyWidget(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, new MaterialPageRoute(builder: (ctx) => KeyPrinciple()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => KeyPrinciple()));
       },
-      child: new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 1.0, color: Colors.blueAccent),
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
         alignment: Alignment.center,
-        child: new Text('Key',
-            style: new TextStyle(color: Colors.blue, fontSize: 16.0)),
+        child: Text('Key', style: TextStyle(color: Colors.blue, fontSize: 16.0)),
       ),
     );
   }
@@ -607,7 +579,7 @@ class _DiscoverState extends State<Discover> {
 //GridView.builder
   Widget gridViewBuilder() {
     List<String> datas = getDataList();
-    return new GridView.builder(
+    return GridView.builder(
       itemCount: datas.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisSpacing: 10.0,
@@ -622,7 +594,7 @@ class _DiscoverState extends State<Discover> {
       //NeverScrollableScrollPhysics：禁止滚动
       //BouncingScrollPhysics：内容超过一屏，上拉有回弹效果
       //ClampingScrollPhysics：包裹内容，不会有回弹，感觉跟 AlwaysScrollableScrollPhysics 差不多
-      physics: new BouncingScrollPhysics(),
+      physics: BouncingScrollPhysics(),
       //Item 的顺序是否反转，若为 true 则反转，这个翻转只是行翻转，即第一行变成最后一行，但是每一行中的子组件还是从左往右摆放的
       //GirdView 的方向，为 Axis.vertical 表示纵向，为 Axis.horizontal 表示横向，横向的话 CrossAxis 和 MainAxis 表示的轴也会调换
       scrollDirection: Axis.vertical,
@@ -635,15 +607,12 @@ class _DiscoverState extends State<Discover> {
   //GridView.builder
   Widget gridViewBuilderAxis() {
     List<String> datas = getDataList();
-    return new GridView.builder(
+    return GridView.builder(
       itemCount: datas.length,
       itemBuilder: (BuildContext context, int index) {
         return getItemContainer(datas[index]);
       },
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 100,
-          mainAxisSpacing: 20.0,
-          crossAxisSpacing: 10.0),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 100, mainAxisSpacing: 20.0, crossAxisSpacing: 10.0),
     );
   }
 
@@ -677,9 +646,9 @@ class _DiscoverState extends State<Discover> {
     return Container(
       color: Colors.blue,
       alignment: Alignment.center,
-      child: new Text(
+      child: Text(
         item,
-        style: new TextStyle(color: Colors.white, fontSize: 20),
+        style: TextStyle(color: Colors.white, fontSize: 20),
       ),
     );
   }

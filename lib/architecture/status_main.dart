@@ -15,8 +15,8 @@ class _StatusMianState extends State<StatusMian> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text('Status', style: new TextStyle(color: Colors.white)),
+      appBar: AppBar(
+        title: Text('Status', style: TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         iconTheme: ThemeData.light().primaryIconTheme,
       ),
@@ -28,7 +28,7 @@ class _StatusMianState extends State<StatusMian> {
             MaterialButton(
               child: Text("MVC"),
               onPressed: () {
-                Navigator.push(context, new MaterialPageRoute(builder: (ctx) => MvcMian()));
+                Navigator.push(context, MaterialPageRoute(builder: (ctx) => MvcMian()));
               },
               textTheme: ButtonTextTheme.normal,
               textColor: Colors.red,
@@ -38,7 +38,7 @@ class _StatusMianState extends State<StatusMian> {
             MaterialButton(
               child: Text("MVP"),
               onPressed: () {
-                Navigator.push(context, new MaterialPageRoute(builder: (ctx) => MvpMain()));
+                Navigator.push(context, MaterialPageRoute(builder: (ctx) => MvpMain()));
               },
               textTheme: ButtonTextTheme.normal,
               textColor: Colors.blue,
@@ -49,7 +49,7 @@ class _StatusMianState extends State<StatusMian> {
             MaterialButton(
               child: Text("Redux"),
               onPressed: () {
-                Navigator.push(context, new MaterialPageRoute(builder: (ctx) => ReduxMian()));
+                Navigator.push(context, MaterialPageRoute(builder: (ctx) => ReduxMian()));
               },
               textTheme: ButtonTextTheme.normal,
               textColor: Colors.blue,
@@ -60,7 +60,7 @@ class _StatusMianState extends State<StatusMian> {
             MaterialButton(
               child: Text("BLoC"),
               onPressed: () {
-                Navigator.push(context, new MaterialPageRoute(builder: (ctx) => BlocMain()));
+                Navigator.push(context, MaterialPageRoute(builder: (ctx) => BlocMain()));
               },
               textTheme: ButtonTextTheme.normal,
               textColor: Colors.blue,

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wechat/tools/ThemeColors.dart';
-import 'package:wechat/widget/listview/ListviewDemo.dart';
-import 'package:wechat/widget/listview/class_bean.dart';
+
+import 'ListviewDemo.dart';
+import 'class_bean.dart';
 
 class ListViewMain extends StatefulWidget {
   @override

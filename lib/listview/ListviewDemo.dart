@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wechat/tools/ThemeColors.dart';
-import 'package:wechat/widget/listview/ListItem.dart';
-import 'package:wechat/widget/listview/class_bean.dart';
+
+import 'ListItem.dart';
+import 'class_bean.dart';
 
 //https://www.jianshu.com/p/9830b1a6ae1f
 //https://blog.csdn.net/hao_m582/article/details/84112278
@@ -11,14 +12,10 @@ class ListviewDemo extends StatefulWidget {
 }
 
 class _ListviewDemoState extends State<ListviewDemo> {
-  var items = List<ListItem>.generate(
-      120,
-      (it) => it % 6 == 0
-          ? HeadingItem("Heading $it")
-          : MessageItem("Sender $it", "Message body $it"));
+  var items =
+      List<ListItem>.generate(120, (it) => it % 6 == 0 ? HeadingItem("Heading $it") : MessageItem("Sender $it", "Message body $it"));
 
-  var list =
-      List<BaseBean>.generate(60, (i) => BaseBean("name$i", i, "content=$i"));
+  var list = List<BaseBean>.generate(60, (i) => BaseBean("name$i", i, "content=$i"));
 
   int i = 1;
 
@@ -27,8 +24,7 @@ class _ListviewDemoState extends State<ListviewDemo> {
     ClassBean _people = ModalRoute.of(context).settings.arguments;
     return new Scaffold(
       appBar: AppBar(
-        title:
-            Text(getTitle(_people?.dex), style: TextStyle(color: Colors.white)),
+        title: Text(getTitle(_people?.dex), style: TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),
@@ -184,8 +180,7 @@ class _ListviewDemoState extends State<ListviewDemo> {
     }
 
 // 添加分割线
-    var divideList =
-        ListTile.divideTiles(context: context, tiles: _list).toList();
+    var divideList = ListTile.divideTiles(context: context, tiles: _list).toList();
     return new Scrollbar(
       child: new ListView(
         // children: _list, // 无分割线
@@ -297,10 +292,7 @@ class MyChildrenDelegate extends SliverChildBuilderDelegate {
     int childCount,
     bool addAutomaticKeepAlives = true,
     bool addRepaintBoundaries = true,
-  }) : super(builder,
-            childCount: childCount,
-            addAutomaticKeepAlives: addAutomaticKeepAlives,
-            addRepaintBoundaries: addRepaintBoundaries);
+  }) : super(builder, childCount: childCount, addAutomaticKeepAlives: addAutomaticKeepAlives, addRepaintBoundaries: addRepaintBoundaries);
 
   ///监听 在可见的列表中 显示的第一个位置和最后一个位置
   @override
