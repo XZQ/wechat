@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:wechat/bean/event/ThemeEvent.dart';
 import 'package:wechat/mainpage/Discover.dart';
 import 'package:wechat/mainpage/Home.dart';
@@ -10,7 +13,13 @@ import 'package:wechat/tools/Constants.dart';
 import 'package:wechat/tools/DataUtils.dart';
 import 'package:wechat/tools/ThemeColors.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  if (Platform.isAndroid) {
+    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -60,11 +69,9 @@ class RandomWordsState extends State<RandomWords> {
    */
   Text getTabTitle(int curIndex) {
     if (curIndex == _tabIndex) {
-      return new Text(_navTitles[curIndex],
-          style: new TextStyle(fontSize: 12.0, color: Colors.green));
+      return new Text(_navTitles[curIndex], style: new TextStyle(fontSize: 12.0, color: Colors.green));
     } else {
-      return new Text(_navTitles[curIndex],
-          style: new TextStyle(fontSize: 12.0, color: Colors.black));
+      return new Text(_navTitles[curIndex], style: new TextStyle(fontSize: 12.0, color: Colors.black));
     }
   }
 
@@ -73,26 +80,11 @@ class RandomWordsState extends State<RandomWords> {
    * **/
   void initData() {
     _tabImages = [
-      [
-        getTabImage('images/pdj_my_category_normal.png'),
-        getTabImage('images/pdj_my_category_select.png')
-      ],
-      [
-        getTabImage('images/pdj_find_default.png'),
-        getTabImage('images/pdj_find_selected.png')
-      ],
-      [
-        getTabImage('images/pdj_cart_default.png'),
-        getTabImage('images/pdj_cart_selected.png')
-      ],
-      [
-        getTabImage('images/pdj_order_default.png'),
-        getTabImage('images/pdj_order_selected.png')
-      ],
-      [
-        getTabImage('images/pdj_my_default.png'),
-        getTabImage('images/pdj_my_selected.png')
-      ],
+      [getTabImage('images/pdj_my_category_normal.png'), getTabImage('images/pdj_my_category_select.png')],
+      [getTabImage('images/pdj_find_default.png'), getTabImage('images/pdj_find_selected.png')],
+      [getTabImage('images/pdj_cart_default.png'), getTabImage('images/pdj_cart_selected.png')],
+      [getTabImage('images/pdj_order_default.png'), getTabImage('images/pdj_order_selected.png')],
+      [getTabImage('images/pdj_my_default.png'), getTabImage('images/pdj_my_selected.png')],
     ];
     _pageList = [
       new Home(),
@@ -133,7 +125,6 @@ class RandomWordsState extends State<RandomWords> {
             _tabIndex = index;
           });
         },
-
       ),
     );
   }
@@ -144,8 +135,7 @@ class RandomWordsState extends State<RandomWords> {
     DataUtils.getColorThemeIndex().then((index) {
       if (index != null) {
         ThemeColors.currentColorTheme = ThemeColors.supportColors[index];
-        Constants.eventBus
-            .fire(new ThemeEvent(ThemeColors.supportColors[index]));
+        Constants.eventBus.fire(new ThemeEvent(ThemeColors.supportColors[index]));
       }
     });
 
