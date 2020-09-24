@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NotificationRoute extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return new NotificationRouteState();
+    return  NotificationRouteState();
   }
 }
 
@@ -11,14 +11,14 @@ class NotificationRouteState extends State {
   String _msg = "";
   @override
   Widget build(BuildContext context) {
-    return new NotificationListener<MyNotification>(
+    return  NotificationListener<MyNotification>(
       onNotification: (notification) {
         setState(() {
           _msg += notification.msg + " ";
         });
       },
-      child: new Center(
-        child: new Column(
+      child:  Center(
+        child:  Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Builder(

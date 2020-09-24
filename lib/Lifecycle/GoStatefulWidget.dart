@@ -55,8 +55,7 @@ class _GoStatefulWidgetState extends State<GoStatefulWidget> with WidgetsBinding
     Log.e("TAG", "_GoStatefulWidgetState ==>  build");
     return Scaffold(
       appBar: new AppBar(
-        title: new Text('GoStatefulWidget',
-            style: new TextStyle(color: Colors.white)),
+        title: new Text('GoStatefulWidget', style: new TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),

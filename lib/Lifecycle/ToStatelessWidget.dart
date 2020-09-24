@@ -12,13 +12,12 @@ class ToStatelessWidget extends StatelessWidget with WidgetsBindingObserver {
     Log.e("TAG", "ToStatelessWidget build");
 
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text('ToStatelessWidget',
-            style: new TextStyle(color: Colors.white)),
+      appBar: AppBar(
+        title: Text('ToStatelessWidget', style: TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),
-      body: new Container(),
+      body: Container(),
     );
   }
 }

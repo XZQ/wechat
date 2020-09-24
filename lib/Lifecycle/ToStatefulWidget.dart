@@ -8,8 +8,7 @@ class ToStatefulWidget extends StatefulWidget {
 }
 
 //https://juejin.im/post/5ca81c80e51d4509f8232e9b
-class _ToStatefulWidgetState extends State<ToStatefulWidget>
-    with WidgetsBindingObserver {
+class _ToStatefulWidgetState extends State<ToStatefulWidget> with WidgetsBindingObserver {
   String string = "button";
 
   _ToStatefulWidgetState() {
@@ -25,10 +24,7 @@ class _ToStatefulWidgetState extends State<ToStatefulWidget>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    Log.e(
-        "TAG",
-        "_ToStatefulWidgetState ==>  didChangeAppLifecycleState " +
-            state.toString());
+    Log.e("TAG", "_ToStatefulWidgetState ==>  didChangeAppLifecycleState " + state.toString());
   }
 
   @override
@@ -60,20 +56,19 @@ class _ToStatefulWidgetState extends State<ToStatefulWidget>
   Widget build(BuildContext context) {
     Log.e("TAG", "_ToStatefulWidgetState ==>  build");
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text('ToStatefulWidget',
-            style: new TextStyle(color: Colors.white)),
+      appBar:  AppBar(
+        title:  Text('ToStatefulWidget', style:  TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),
-      body: new Center(
-        child: new Padding(
+      body:  Center(
+        child:  Padding(
           padding: EdgeInsets.all(10),
-          child: new Column(
+          child:  Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              new RaisedButton(
+               RaisedButton(
                 child: Text(string),
                 onPressed: () {
                   setState(() {
@@ -84,8 +79,8 @@ class _ToStatefulWidgetState extends State<ToStatefulWidget>
                 textColor: Colors.blue,
                 color: Color(0xFF82B1FF),
               ),
-              new Container(
-                child: new RaisedButton(
+               Container(
+                child:  RaisedButton(
                   child: Text("string"),
                   onPressed: () {
                     setState(() {

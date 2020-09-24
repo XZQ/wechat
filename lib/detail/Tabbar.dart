@@ -10,55 +10,55 @@ class Tabbar extends StatelessWidget {
       '阿里',
     ];
 
-    return new DefaultTabController(
+    return  DefaultTabController(
       length: mytabs.length,
       child: Scaffold(
         appBar: AppBar(
-          bottom: new TabBar(
+          bottom:  TabBar(
             isScrollable: true,
             indicatorColor: Colors.green,
             indicatorSize: TabBarIndicatorSize.label,
             labelColor: Colors.white,
-            labelStyle: new TextStyle(fontSize: 14.0),
+            labelStyle:  TextStyle(fontSize: 14.0),
             unselectedLabelColor: Colors.white54,
             indicatorWeight: 2.0,
-            indicatorPadding: new EdgeInsets.only(bottom: 5.0),
-            unselectedLabelStyle: new TextStyle(fontSize: 14.0),
+            indicatorPadding:  EdgeInsets.only(bottom: 5.0),
+            unselectedLabelStyle:  TextStyle(fontSize: 14.0),
             tabs: mytabs.map((String str) {
-              return new Tab(
+              return  Tab(
                 text: str,
               );
             }).toList(),
           ),
         ),
-        body: new ListView.builder(
+        body:  ListView.builder(
             itemCount: 20,
             itemBuilder: (context, index) {
-              return new ListTile(
-                title: new Row(
+              return  ListTile(
+                title:  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    new Text(
+                     Text(
                       "今天",
-                      style: new TextStyle(color: Colors.black, fontSize: 16.0),
+                      style:  TextStyle(color: Colors.black, fontSize: 16.0),
                     ),
-                    new Text("2.02",
-                        style: new TextStyle(
+                     Text("2.02",
+                        style:  TextStyle(
                             color: Colors.green,
                             fontSize: 22.0,
                             fontWeight: FontWeight.w500)),
                   ],
                 ),
-                subtitle: new Row(
+                subtitle:  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    new Text(
+                     Text(
                       "02:20",
-                      style: new TextStyle(color: Colors.black, fontSize: 14.0),
+                      style:  TextStyle(color: Colors.black, fontSize: 14.0),
                     ),
-                    new Text(
+                     Text(
                       "银行卡提现",
-                      style: new TextStyle(color: Colors.black, fontSize: 14.0),
+                      style:  TextStyle(color: Colors.black, fontSize: 14.0),
                     ),
                   ],
                 ),

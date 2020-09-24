@@ -13,8 +13,7 @@ class GoStatelessWidget extends StatelessWidget {
 
     return Scaffold(
       appBar: new AppBar(
-        title: new Text('GoStatelessWidget  生命周期',
-            style: new TextStyle(color: Colors.white)),
+        title: new Text('GoStatelessWidget  生命周期', style: new TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),

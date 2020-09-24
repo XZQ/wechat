@@ -10,16 +10,16 @@ class CustomPaintRoute extends StatefulWidget {
 class _CustomPaintRouteState extends State<CustomPaintRoute> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('五子棋', style: new TextStyle(color: Colors.white)),
+    return  Scaffold(
+      appBar:  AppBar(
+        title:  Text('五子棋', style:  TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),
-      body: new Center(
-        child: new CustomPaint(
-          size: new Size(350, 350),
-          painter: new MyPainter(),
+      body:  Center(
+        child:  CustomPaint(
+          size:  Size(350, 350),
+          painter:  MyPainter(),
           //
         ),
       ),
@@ -33,7 +33,7 @@ class MyPainter extends CustomPainter {
     double eWidth = size.width / 13;
     double eHeight = size.height / 13;
 
-    var paint = new Paint()
+    var paint =  Paint()
       ..color = Color(0x77cdb175)
       ..isAntiAlias = true
       ..style = PaintingStyle.fill; //背景为纸黄色

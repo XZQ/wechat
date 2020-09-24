@@ -13,33 +13,32 @@ class LifeCycleStateLess extends StatelessWidget {
   Widget build(BuildContext context) {
     Log.e("TAG", "LifeCycleStateLess build");
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text('LifeCycleStateLess',
-            style: new TextStyle(color: Colors.white)),
+      appBar: AppBar(
+        title: Text('LifeCycleStateLess', style: TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),
-      body: new Container(
-        child: new Center(
+      body: Container(
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              new MaterialButton(
+              MaterialButton(
                 child: Text("go StatelessWidget"),
                 onPressed: () {
-                  Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-                    return new GoStatelessWidget();
+                  Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+                    return GoStatelessWidget();
                   }));
                 },
                 textColor: Colors.blue,
                 color: Color(0xFF82B1FF),
               ),
-              new MaterialButton(
+              MaterialButton(
                 child: Text("go StatefulWidget"),
                 onPressed: () {
-                  Navigator.push(context, new MaterialPageRoute(builder: (ctx) {
-                    return new GoStatefulWidget();
+                  Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+                    return GoStatefulWidget();
                   }));
                 },
                 textColor: Colors.blue,

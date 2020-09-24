@@ -9,8 +9,7 @@ class LifeCycleStateful extends StatefulWidget {
   LifeDemoState createState() => LifeDemoState();
 }
 
-class LifeDemoState extends State<LifeCycleStateful>
-    with WidgetsBindingObserver {
+class LifeDemoState extends State<LifeCycleStateful> with WidgetsBindingObserver {
   LifeDemoState() {
     Log.e("TAG", "LifeDemoState ==>  构造");
   }
@@ -24,8 +23,7 @@ class LifeDemoState extends State<LifeCycleStateful>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    Log.e("TAG",
-        "LifeDemoState ==>  didChangeAppLifecycleState " + state.toString());
+    Log.e("TAG", "LifeDemoState ==>  didChangeAppLifecycleState " + state.toString());
   }
 
   @override
@@ -58,8 +56,7 @@ class LifeDemoState extends State<LifeCycleStateful>
     Log.e("TAG", "LifeDemoState ==>  build");
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('LifeCycleStateful',
-            style: new TextStyle(color: Colors.white)),
+        title: new Text('LifeCycleStateful', style: new TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),
