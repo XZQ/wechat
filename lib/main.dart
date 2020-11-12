@@ -6,8 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:wechat/bean/event/ThemeEvent.dart';
 import 'package:wechat/mainpage/Discover.dart';
 import 'package:wechat/mainpage/Home.dart';
-import 'package:wechat/mainpage/Mine.dart';
-import 'package:wechat/mainpage/Order.dart';
 import 'package:wechat/mainpage/Shop.dart';
 import 'package:wechat/tools/Constants.dart';
 import 'package:wechat/tools/DataUtils.dart';
@@ -15,29 +13,30 @@ import 'package:wechat/tools/ThemeColors.dart';
 
 void main() {
   if (Platform.isAndroid) {
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemUiOverlayStyle systemUiOverlayStyle =
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
+      theme: ThemeData(
         primaryColor: ThemeColors.currentColorTheme,
       ),
-      home: new Center(
-        child: new RandomWords(),
+      home: Center(
+        child: RandomWords(),
       ),
     );
   }
 }
 
 class RandomWords extends StatefulWidget {
-  createState() => new RandomWordsState();
+  createState() => RandomWordsState();
 }
 
 class RandomWordsState extends State<RandomWords> {
@@ -50,7 +49,7 @@ class RandomWordsState extends State<RandomWords> {
 
   //根据路径获取图片
   Image getTabImage(final String path) {
-    return new Image.asset(path, width: 20, height: 20);
+    return Image.asset(path, width: 20, height: 20);
   }
 
   /**
@@ -69,9 +68,11 @@ class RandomWordsState extends State<RandomWords> {
    */
   Text getTabTitle(int curIndex) {
     if (curIndex == _tabIndex) {
-      return new Text(_navTitles[curIndex], style: new TextStyle(fontSize: 12.0, color: Colors.green));
+      return Text(_navTitles[curIndex],
+          style: TextStyle(fontSize: 12.0, color: Colors.green));
     } else {
-      return new Text(_navTitles[curIndex], style: new TextStyle(fontSize: 12.0, color: Colors.black));
+      return Text(_navTitles[curIndex],
+          style: TextStyle(fontSize: 12.0, color: Colors.black));
     }
   }
 
@@ -80,21 +81,36 @@ class RandomWordsState extends State<RandomWords> {
    * **/
   void initData() {
     _tabImages = [
-      [getTabImage('images/pdj_my_category_normal.png'), getTabImage('images/pdj_my_category_select.png')],
-      [getTabImage('images/pdj_find_default.png'), getTabImage('images/pdj_find_selected.png')],
-      [getTabImage('images/pdj_cart_default.png'), getTabImage('images/pdj_cart_selected.png')],
-      [getTabImage('images/pdj_order_default.png'), getTabImage('images/pdj_order_selected.png')],
-      [getTabImage('images/pdj_my_default.png'), getTabImage('images/pdj_my_selected.png')],
+      [
+        getTabImage('images/pdj_my_category_normal.png'),
+        getTabImage('images/pdj_my_category_select.png')
+      ],
+      [
+        getTabImage('images/pdj_find_default.png'),
+        getTabImage('images/pdj_find_selected.png')
+      ],
+      [
+        getTabImage('images/pdj_cart_default.png'),
+        getTabImage('images/pdj_cart_selected.png')
+      ],
+      [
+        getTabImage('images/pdj_order_default.png'),
+        getTabImage('images/pdj_order_selected.png')
+      ],
+      [
+        getTabImage('images/pdj_my_default.png'),
+        getTabImage('images/pdj_my_selected.png')
+      ],
     ];
     _pageList = [
-      new Home(),
-      new Discover(),
-      new Shop(),
-      new Order(),
-      new MineWidget(),
+      Home(),
+      Discover(),
+      Shop(),
+      Order(),
+      Miidget(),
     ];
 
-    _body = new IndexedStack(
+    _body = IndexedStack(
       children: _pageList,
       index: _tabIndex,
     );
@@ -103,21 +119,21 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     initData();
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         centerTitle: true,
-        title: new Text("京东到家", style: new TextStyle(color: Colors.white)),
+        title: Text("京东到家", style: TextStyle(color: Colors.white)),
         backgroundColor: themeColor,
         elevation: 0.0,
       ),
       body: _body,
-      bottomNavigationBar: new CupertinoTabBar(
+      bottomNavigationBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
-          new BottomNavigationBarItem(icon: getImage(0), title: getTabTitle(0)),
-          new BottomNavigationBarItem(icon: getImage(1), title: getTabTitle(1)),
-          new BottomNavigationBarItem(icon: getImage(2), title: getTabTitle(2)),
-          new BottomNavigationBarItem(icon: getImage(3), title: getTabTitle(3)),
-          new BottomNavigationBarItem(icon: getImage(4), title: getTabTitle(4)),
+          BottomNavigationBarItem(icon: getImage(0), title: getTabTitle(0)),
+          BottomNavigationBarItem(icon: getImage(1), title: getTabTitle(1)),
+          BottomNavigationBarItem(icon: getImage(2), title: getTabTitle(2)),
+          BottomNavigationBarItem(icon: getImage(3), title: getTabTitle(3)),
+          BottomNavigationBarItem(icon: getImage(4), title: getTabTitle(4)),
         ],
         currentIndex: _tabIndex, //默认第一个
         onTap: (index) {
@@ -135,7 +151,7 @@ class RandomWordsState extends State<RandomWords> {
     DataUtils.getColorThemeIndex().then((index) {
       if (index != null) {
         ThemeColors.currentColorTheme = ThemeColors.supportColors[index];
-        Constants.eventBus.fire(new ThemeEvent(ThemeColors.supportColors[index]));
+        Constants.eventBus.fire(ThemeEvent(ThemeColors.supportColors[index]));
       }
     });
 
