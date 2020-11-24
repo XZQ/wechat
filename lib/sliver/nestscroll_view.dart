@@ -16,8 +16,7 @@ Widget _timeTabBarItem(String title) {
   ));
 }
 
-class _NestScrollViewState extends State<NestScrollView>
-    with SingleTickerProviderStateMixin {
+class _NestScrollViewState extends State<NestScrollView> with SingleTickerProviderStateMixin {
   //
   TabController tabController;
 
@@ -34,8 +33,7 @@ class _NestScrollViewState extends State<NestScrollView>
   void initState() {
     super.initState();
     //
-    tabController = new TabController(
-        vsync: this, initialIndex: 0, length: timeTabs.length);
+    tabController = new TabController(vsync: this, initialIndex: 0, length: timeTabs.length);
 //
     tabController.animation.addListener(() {
       setState(() {});

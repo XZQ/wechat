@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wechat/detail/Tabbar.dart';
 
 class Home extends StatefulWidget {
-  createState() =>   HomeState();
+  createState() => HomeState();
 }
 
 class HomeState extends State<Home> {
@@ -13,7 +13,7 @@ class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // print("HomeState ------------------->build");
-    return   Scaffold(
+    return Scaffold(
       body: _buildListView(),
     );
   }
@@ -60,7 +60,7 @@ class HomeState extends State<Home> {
   }
 
   Widget _buildListView() {
-    return  ListView.builder(
+    return ListView.builder(
       itemCount: 50,
       itemBuilder: (context, index) {
         return _item(context, "");
@@ -69,20 +69,20 @@ class HomeState extends State<Home> {
   }
 
   Widget _item(BuildContext context, String str) {
-    return  ListTile(
+    return ListTile(
       onTap: () {
-        Navigator.push(context,  MaterialPageRoute(builder: (ctx) {
-          return  Tabbar();
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return Tabbar();
         }));
       },
-      leading:  Image.asset(
+      leading: Image.asset(
         "images/img.jpg",
         width: 40.0,
         height: 40.0,
       ),
-      title:  Text("京东到家" + str),
-      subtitle:  Text("京东到家,便捷到家"),
-      trailing:  Text("20.45"),
+      title: Text("京东到家" + str),
+      subtitle: Text("京东到家,便捷到家"),
+      trailing: Text("20.45"),
     );
   }
 }

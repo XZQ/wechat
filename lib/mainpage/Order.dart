@@ -60,8 +60,7 @@ class _OrderState extends State<Order> {
   Widget _mixin(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => MixinTest()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => MixinTest()));
       },
       child: getContainer('Mixin'),
     );
@@ -70,8 +69,7 @@ class _OrderState extends State<Order> {
   Widget _search(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => SearchAll()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => SearchAll()));
       },
       child: getContainer('Search'),
     );
@@ -89,8 +87,7 @@ class _OrderState extends State<Order> {
   Widget _future(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => FutureMain()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => FutureMain()));
       },
       child: getContainer('Future'),
     );
@@ -109,8 +106,7 @@ class _OrderState extends State<Order> {
   Widget _nestScrollview(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => NestScrollView()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => NestScrollView()));
       },
       child: getContainer('nestScroll'),
     );
@@ -119,8 +115,7 @@ class _OrderState extends State<Order> {
   Widget _sliverHeader(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => SliverHeader()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => SliverHeader()));
       },
       child: getContainer('Header'),
     );
@@ -135,11 +130,7 @@ class _OrderState extends State<Order> {
   }
 
   TextStyle getTextStytle() {
-    return TextStyle(
-        color: Colors.blue,
-        fontWeight: FontWeight.normal,
-        decoration: TextDecoration.none,
-        fontSize: 13.0);
+    return TextStyle(color: Colors.blue, fontWeight: FontWeight.normal, decoration: TextDecoration.none, fontSize: 13.0);
   }
 
   BoxDecoration getBoxDecoration() {
@@ -152,8 +143,7 @@ class _OrderState extends State<Order> {
   Widget _sliverTest(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => SliverBar()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => SliverBar()));
       },
       child: getContainer("Sliver"),
     );
@@ -162,8 +152,7 @@ class _OrderState extends State<Order> {
   Widget _animationTest(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => AnimationDemo()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => AnimationDemo()));
       },
       child: getContainer("Animation"),
     );
@@ -172,8 +161,7 @@ class _OrderState extends State<Order> {
   Widget _notificationTest(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => NotificationTest()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => NotificationTest()));
       },
       child: getContainer("Nofication"),
     );
@@ -182,8 +170,7 @@ class _OrderState extends State<Order> {
   Widget _scroll(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => ScrollTest()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => ScrollTest()));
       },
       child: getContainer("Scroll"),
     );
@@ -192,8 +179,7 @@ class _OrderState extends State<Order> {
   Widget _notify(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (ctx) => NotificationMain()));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => NotificationMain()));
       },
       child: getContainer("Notify"),
     );

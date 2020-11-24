@@ -9,8 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:
-            Text('Provider3 HomePage', style: TextStyle(color: Colors.white)),
+        title: Text('Provider3 HomePage', style: TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
       ),
       body: StreamBuilder(
@@ -21,8 +20,7 @@ class HomePage extends StatelessWidget {
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SecondPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
         },
         child: Icon(Icons.arrow_forward_ios),
       ),

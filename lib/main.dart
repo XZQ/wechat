@@ -1,11 +1,14 @@
 import 'dart:io';
 
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wechat/bean/event/ThemeEvent.dart';
 import 'package:wechat/mainpage/Discover.dart';
 import 'package:wechat/mainpage/Home.dart';
+import 'package:wechat/mainpage/Mine.dart';
+import 'package:wechat/mainpage/Order.dart';
 import 'package:wechat/mainpage/Shop.dart';
 import 'package:wechat/tools/Constants.dart';
 import 'package:wechat/tools/DataUtils.dart';
@@ -13,17 +16,24 @@ import 'package:wechat/tools/ThemeColors.dart';
 
 void main() {
   if (Platform.isAndroid) {
-    SystemUiOverlayStyle systemUiOverlayStyle =
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
-  runApp(MyApp());
+  runApp(
+    // DevicePreview(
+    //   enabled: true,
+    //   builder: (context) => MyApp(), // Wrap your app
+    // ),
+     MyApp()
+  );
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // locale: DevicePreview.locale(context),
+      // builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: ThemeColors.currentColorTheme,
@@ -47,14 +57,11 @@ class RandomWordsState extends State<RandomWords> {
   var _pageList;
   var _body;
 
-  //根据路径获取图片
+  /// 根据路径获取图片
   Image getTabImage(final String path) {
     return Image.asset(path, width: 20, height: 20);
   }
 
-  /**
-   * 根据索引获取图片
-   * **/
   Image getImage(int index) {
     if (_tabIndex == index) {
       return _tabImages[index][1];
@@ -63,51 +70,29 @@ class RandomWordsState extends State<RandomWords> {
     }
   }
 
-  /*
-   * 获取bottomTab的颜色和文字
-   */
   Text getTabTitle(int curIndex) {
     if (curIndex == _tabIndex) {
-      return Text(_navTitles[curIndex],
-          style: TextStyle(fontSize: 12.0, color: Colors.green));
+      return Text(_navTitles[curIndex], style: TextStyle(fontSize: 12.0, color: Colors.green));
     } else {
-      return Text(_navTitles[curIndex],
-          style: TextStyle(fontSize: 12.0, color: Colors.black));
+      return Text(_navTitles[curIndex], style: TextStyle(fontSize: 12.0, color: Colors.black));
     }
   }
 
-  /**
-   * 初始化数据
-   * **/
+  ///初始化数据
   void initData() {
     _tabImages = [
-      [
-        getTabImage('images/pdj_my_category_normal.png'),
-        getTabImage('images/pdj_my_category_select.png')
-      ],
-      [
-        getTabImage('images/pdj_find_default.png'),
-        getTabImage('images/pdj_find_selected.png')
-      ],
-      [
-        getTabImage('images/pdj_cart_default.png'),
-        getTabImage('images/pdj_cart_selected.png')
-      ],
-      [
-        getTabImage('images/pdj_order_default.png'),
-        getTabImage('images/pdj_order_selected.png')
-      ],
-      [
-        getTabImage('images/pdj_my_default.png'),
-        getTabImage('images/pdj_my_selected.png')
-      ],
+      [getTabImage('images/pdj_my_category_normal.png'), getTabImage('images/pdj_my_category_select.png')],
+      [getTabImage('images/pdj_find_default.png'), getTabImage('images/pdj_find_selected.png')],
+      [getTabImage('images/pdj_cart_default.png'), getTabImage('images/pdj_cart_selected.png')],
+      [getTabImage('images/pdj_order_default.png'), getTabImage('images/pdj_order_selected.png')],
+      [getTabImage('images/pdj_my_default.png'), getTabImage('images/pdj_my_selected.png')],
     ];
     _pageList = [
       Home(),
       Discover(),
       Shop(),
       Order(),
-      Miidget(),
+      MineWidget(),
     ];
 
     _body = IndexedStack(
@@ -129,9 +114,12 @@ class RandomWordsState extends State<RandomWords> {
       body: _body,
       bottomNavigationBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
+          // ignore: deprecated_member_use
           BottomNavigationBarItem(icon: getImage(0), title: getTabTitle(0)),
+          // ignore: deprecated_member_use
           BottomNavigationBarItem(icon: getImage(1), title: getTabTitle(1)),
           BottomNavigationBarItem(icon: getImage(2), title: getTabTitle(2)),
+          // ignore: deprecated_member_use
           BottomNavigationBarItem(icon: getImage(3), title: getTabTitle(3)),
           BottomNavigationBarItem(icon: getImage(4), title: getTabTitle(4)),
         ],

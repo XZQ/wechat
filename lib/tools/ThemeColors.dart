@@ -17,9 +17,15 @@ class ThemeColors {
     Colors.lime,
     Colors.indigo,
     Colors.cyan,
-    Colors.teal
+    Colors.teal,
+    Colors.white
   ];
 
   // 当前的主题色
   static Color currentColorTheme = defaultColor;
+
+  static const Color yellowFF2474 = Color(0xFFFF2474);
+  static const Color yellowFF4F00 = Color(0xFFFF4F00);
+  static const Color white = Color(0xFFFFFFFF);
 }
+

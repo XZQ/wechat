@@ -19,8 +19,7 @@ class _NestScrollViewHeaderState extends State<NestScrollViewHeader> {
               sliver: SliverAppBar(
                 backgroundColor: Color(0xfff1f1f1),
                 forceElevated: innerBoxIsScrolled,
-                bottom: PreferredSize(
-                    child: Container(), preferredSize: Size.fromHeight(100)),
+                bottom: PreferredSize(child: Container(), preferredSize: Size.fromHeight(100)),
                 flexibleSpace: Column(
                   children: <Widget>[],
                 ),

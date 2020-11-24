@@ -19,8 +19,7 @@ class _SliverHeaderState extends State<SliverHeader> {
                 collapsedHeight: 40,
                 expandedHeight: 300,
                 paddingTop: MediaQuery.of(context).padding.top,
-                coverImgUrl:
-                    'https://img.zcool.cn/community/01c6615d3ae047a8012187f447cfef.jpg@1280w_1l_2o_100sh.jpg'),
+                coverImgUrl: 'https://img.zcool.cn/community/01c6615d3ae047a8012187f447cfef.jpg@1280w_1l_2o_100sh.jpg'),
           ),
           SliverFillRemaining(
             child: FilmContent(),
@@ -75,9 +74,7 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   }
 
   Color makeStickyHeaderBgColor(shrinkOffset) {
-    final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255)
-        .clamp(0, 255)
-        .toInt();
+    final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255).clamp(0, 255).toInt();
     return Color.fromARGB(alpha, 255, 255, 255);
   }
 
@@ -85,16 +82,13 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
     if (shrinkOffset <= 50) {
       return isIcon ? Colors.white : Colors.transparent;
     } else {
-      final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255)
-          .clamp(0, 255)
-          .toInt();
+      final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255).clamp(0, 255).toInt();
       return Color.fromARGB(alpha, 0, 0, 0);
     }
   }
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     this.updateStatusBarBrightness(shrinkOffset);
     return Container(
       height: this.maxExtent,
@@ -137,8 +131,7 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
                       IconButton(
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: this
-                              .makeStickyHeaderTextColor(shrinkOffset, true),
+                          color: this.makeStickyHeaderTextColor(shrinkOffset, true),
                         ),
                         onPressed: () => Navigator.pop(context),
                       ),
@@ -147,15 +140,13 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
-                          color: this
-                              .makeStickyHeaderTextColor(shrinkOffset, false),
+                          color: this.makeStickyHeaderTextColor(shrinkOffset, false),
                         ),
                       ),
                       IconButton(
                         icon: Icon(
                           Icons.share,
-                          color: this
-                              .makeStickyHeaderTextColor(shrinkOffset, true),
+                          color: this.makeStickyHeaderTextColor(shrinkOffset, true),
                         ),
                         onPressed: () {},
                       ),
@@ -230,11 +221,8 @@ class FilmContent extends StatelessWidget {
                     Padding(padding: EdgeInsets.only(top: 2)),
                     Text(
                       '32.1万人想看/大V推荐度95%',
-                      style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xFF999999),
-                          fontWeight: FontWeight.normal,
-                          decoration: TextDecoration.none),
+                      style:
+                          TextStyle(fontSize: 13, color: Color(0xFF999999), fontWeight: FontWeight.normal, decoration: TextDecoration.none),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),

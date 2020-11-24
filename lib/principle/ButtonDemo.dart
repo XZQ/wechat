@@ -67,8 +67,7 @@ class _ButtonDemoState extends State<ButtonDemo> {
 //       MaterialButton shape 子类才起效
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          side: BorderSide(
-              color: Color(0xFFFFFFFF), style: BorderStyle.solid, width: 2)),
+          side: BorderSide(color: Color(0xFFFFFFFF), style: BorderStyle.solid, width: 2)),
       clipBehavior: Clip.antiAlias,
       materialTapTargetSize: MaterialTapTargetSize.padded,
       animationDuration: Duration(seconds: 1),
@@ -110,8 +109,7 @@ class _ButtonDemoState extends State<ButtonDemo> {
       // RaisedButton 才起效
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          side: BorderSide(
-              color: Color(0xFFFFF00F), style: BorderStyle.solid, width: 2)),
+          side: BorderSide(color: Color(0xFFFFF00F), style: BorderStyle.solid, width: 2)),
       clipBehavior: Clip.antiAlias,
       materialTapTargetSize: MaterialTapTargetSize.padded,
       animationDuration: Duration(seconds: 1),
@@ -141,8 +139,7 @@ class _ButtonDemoState extends State<ButtonDemo> {
       // RaisedButton 才起效
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          side: BorderSide(
-              color: Color(0xFFF0F00), style: BorderStyle.solid, width: 2)),
+          side: BorderSide(color: Color(0xFFF0F00), style: BorderStyle.solid, width: 2)),
       clipBehavior: Clip.antiAlias,
       materialTapTargetSize: MaterialTapTargetSize.padded,
       animationDuration: Duration(seconds: 1),
@@ -184,8 +181,7 @@ class _ButtonDemoState extends State<ButtonDemo> {
 //       RaisedButton 才起效
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          side: BorderSide(
-              color: Color(0xFFF9F3FF), style: BorderStyle.solid, width: 2)),
+          side: BorderSide(color: Color(0xFFF9F3FF), style: BorderStyle.solid, width: 2)),
       clipBehavior: Clip.antiAlias,
       materialTapTargetSize: MaterialTapTargetSize.padded,
 //      animationDuration: Duration(seconds:1),
@@ -221,8 +217,7 @@ class _ButtonDemoState extends State<ButtonDemo> {
       // RaisedButton 才起效
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          side: BorderSide(
-              color: Color(0xFF6FFF00), style: BorderStyle.solid, width: 2)),
+          side: BorderSide(color: Color(0xFF6FFF00), style: BorderStyle.solid, width: 2)),
       clipBehavior: Clip.antiAlias,
       materialTapTargetSize: MaterialTapTargetSize.padded,
 //      animationDuration: Duration(seconds:1),
@@ -263,8 +258,7 @@ class _ButtonDemoState extends State<ButtonDemo> {
 //       RaisedButton 才起效
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          side: BorderSide(
-              color: Color(0xFFFFFF00), style: BorderStyle.solid, width: 2)),
+          side: BorderSide(color: Color(0xFFFFFF00), style: BorderStyle.solid, width: 2)),
       clipBehavior: Clip.antiAlias,
 //      materialTapTargetSize: MaterialTapTargetSize.padded,
 //      animationDuration: Duration(seconds:1),
