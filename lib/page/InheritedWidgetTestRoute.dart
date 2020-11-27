@@ -49,7 +49,7 @@ class _TestWidgetState extends State<_TestWidget> {
 
 class InheritedWidgetTestRoute extends StatefulWidget {
   @override
-  _InheritedWidgetTestRouteState createState() =>new _InheritedWidgetTestRouteState();
+  _InheritedWidgetTestRouteState createState() => new _InheritedWidgetTestRouteState();
 }
 
 class _InheritedWidgetTestRouteState extends State<InheritedWidgetTestRoute> {

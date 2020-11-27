@@ -9,8 +9,7 @@ class SliverBar extends StatefulWidget {
   _SliverBarState createState() => _SliverBarState();
 }
 
-class _SliverBarState extends State<SliverBar>
-    with SingleTickerProviderStateMixin {
+class _SliverBarState extends State<SliverBar> with SingleTickerProviderStateMixin {
   TabController tabController;
 
   @override

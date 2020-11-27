@@ -12,11 +12,11 @@ class _ButtonDemoState extends State<ButtonDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text('Button', style: new TextStyle(color: Colors.white)),
+      appBar: AppBar(
+        title: Text('Button', style: TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
       ),
-      body: new Container(
+      body: Container(
         child: getButtons(context),
       ),
     );
@@ -24,21 +24,21 @@ class _ButtonDemoState extends State<ButtonDemo> {
 
   //  ---------------------------Button--------------------------------------------------
   Widget getButtons(BuildContext context) {
-    return new Column(children: [
+    return Column(children: [
       SizedBox(height: 10),
-      new Expanded(flex: 0, child: getMaterialButton(context)),
+      Expanded(flex: 0, child: getMaterialButton(context)),
       //
       SizedBox(height: 10),
-      new Expanded(flex: 0, child: getRaisedButtonRow(context)),
+      Expanded(flex: 0, child: getRaisedButtonRow(context)),
       //
       SizedBox(height: 10),
-      new Expanded(flex: 0, child: getFlatButtonRow(context)),
+      Expanded(flex: 0, child: getFlatButtonRow(context)),
       //
       SizedBox(height: 10),
-      new Expanded(flex: 0, child: getOutlineButtonRow(context)),
+      Expanded(flex: 0, child: getOutlineButtonRow(context)),
       //
       SizedBox(height: 10),
-      new Expanded(flex: 0, child: getCupertinoButton(context)),
+      Expanded(flex: 0, child: getCupertinoButton(context)),
       SizedBox(height: 10),
     ]);
   }
@@ -77,11 +77,11 @@ class _ButtonDemoState extends State<ButtonDemo> {
   }
 
   Widget getRaisedButtonRow(BuildContext context) {
-    return new Row(children: [
+    return Row(children: [
       SizedBox(width: 10),
-      new Expanded(flex: 1, child: getRaisedButton(context)),
+      Expanded(flex: 1, child: getRaisedButton(context)),
       SizedBox(width: 10),
-      new Expanded(flex: 1, child: getRaisedButtonIcon(context)),
+      Expanded(flex: 1, child: getRaisedButtonIcon(context)),
       SizedBox(width: 10),
     ]);
   }
@@ -149,11 +149,11 @@ class _ButtonDemoState extends State<ButtonDemo> {
   }
 
   Widget getFlatButtonRow(BuildContext context) {
-    return new Row(children: [
+    return Row(children: [
       SizedBox(width: 10),
-      new Expanded(flex: 1, child: getFlatButton(context)),
+      Expanded(flex: 1, child: getFlatButton(context)),
       SizedBox(width: 10),
-      new Expanded(flex: 1, child: getFlatButtonIcon(context)),
+      Expanded(flex: 1, child: getFlatButtonIcon(context)),
       SizedBox(width: 10),
     ]);
   }
@@ -227,11 +227,11 @@ class _ButtonDemoState extends State<ButtonDemo> {
   }
 
   Widget getOutlineButtonRow(BuildContext context) {
-    return new Row(children: [
+    return Row(children: [
       SizedBox(width: 10),
-      new Expanded(flex: 1, child: getOutlineButton(context)),
+      Expanded(flex: 1, child: getOutlineButton(context)),
       SizedBox(width: 10),
-      new Expanded(flex: 1, child: getOutlineButtonIcon(context)),
+      Expanded(flex: 1, child: getOutlineButtonIcon(context)),
       SizedBox(width: 10),
     ]);
   }

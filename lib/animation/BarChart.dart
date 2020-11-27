@@ -106,6 +106,7 @@ class BarGroupTween extends Tween<BarGroup> {
 
 class BarStack implements MergeTweenable<BarStack> {
   BarStack(this.rank, this.baseColor, this.x, this.width, this.bars);
+
   final int rank;
   final Color baseColor;
   final double x;
@@ -132,16 +133,13 @@ class BarStackTween extends Tween<BarStack> {
   final MergeTween<Bar> _barsTween;
 
   @override
-  BarStack lerp(double t) => new BarStack(
-      begin.rank,
-      Color.lerp(begin.baseColor, end.baseColor, t),
-      lerpDouble(begin.x, end.x, t),
-      lerpDouble(begin.width, end.width, t),
-      _barsTween.lerp(t));
+  BarStack lerp(double t) => new BarStack(begin.rank, Color.lerp(begin.baseColor, end.baseColor, t), lerpDouble(begin.x, end.x, t),
+      lerpDouble(begin.width, end.width, t), _barsTween.lerp(t));
 }
 
 class Bar extends MergeTweenable<Bar> {
   Bar(this.rank, this.height, this.color);
+
   final int rank;
   final double height;
   final Color color;
@@ -157,8 +155,7 @@ class Bar extends MergeTweenable<Bar> {
 
   static Bar lerp(Bar begin, Bar end, double t) {
     assert(begin.rank == end.rank);
-    return new Bar(begin.rank, lerpDouble(begin.height, end.height, t),
-        Color.lerp(begin.color, end.color, t));
+    return new Bar(begin.rank, lerpDouble(begin.height, end.height, t), Color.lerp(begin.color, end.color, t));
   }
 }
 
@@ -192,10 +189,7 @@ class BarChartPainter extends CustomPainter {
         var y = size.height;
         for (final bar in stack.bars) {
           barPaint.color = bar.color;
-          canvas.drawRect(
-              new Rect.fromLTWH(
-                  stack.x, y - bar.height, stack.width, bar.height),
-              barPaint);
+          canvas.drawRect(new Rect.fromLTWH(stack.x, y - bar.height, stack.width, bar.height), barPaint);
           if (y < size.height) {
             linePath.moveTo(stack.x, y);
             linePath.lineTo(stack.x + stack.width, y);

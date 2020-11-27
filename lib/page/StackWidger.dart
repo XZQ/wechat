@@ -9,27 +9,27 @@ class StackWidger extends StatefulWidget {
 class _StackWidgerState extends State<StackWidger> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Stack', style: new TextStyle(color: Colors.white)),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Stack', style: TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
       ),
-      body: new Container(
+      body: Container(
           color: Colors.green,
           height: 150.0,
           width: 500.0,
-          child: new Stack(children: <Widget>[
-            new Container(
+          child: Stack(children: <Widget>[
+            Container(
               color: Colors.blueAccent,
               height: 50.0,
               width: 100.0,
               alignment: Alignment.center,
               child: Text('unPositioned'),
             ),
-            new Positioned(
+            Positioned(
                 left: 40.0,
                 top: 80.0,
-                child: new Container(
+                child: Container(
                   color: Colors.pink,
                   height: 50.0,
                   width: 95.0,
@@ -44,5 +44,4 @@ class _StackWidgerState extends State<StackWidger> {
   void deactivate() {
     super.deactivate();
   }
-
 }

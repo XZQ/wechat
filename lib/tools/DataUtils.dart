@@ -13,6 +13,4 @@ class DataUtils {
     SharedPreferences sp = await SharedPreferences.getInstance();
     return sp.getInt(SP_COLOR_THEME_INDEX);
   }
-
- 
 }

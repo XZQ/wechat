@@ -45,8 +45,7 @@ class _HomePageState extends State<HomePage> {
               child: SingleChildScrollView(
                 child: StreamBuilder(
                   stream: _viewModel.dataStream,
-                  builder:
-                      (BuildContext context, AsyncSnapshot<String> snapshot) {
+                  builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return Center(
                         child: CircularProgressIndicator(),
@@ -59,6 +58,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            Offstage(),
           ],
         ),
       ),

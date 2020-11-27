@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 abstract class MyStatelessWidget extends StatelessWidget {
-
-
   const MyStatelessWidget({Key key}) : super(key: key);
 
   // @override
@@ -10,6 +8,3 @@ abstract class MyStatelessWidget extends StatelessWidget {
 
   Widget build(BuildContext context);
 }
-
-
-

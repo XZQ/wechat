@@ -6,8 +6,7 @@ class CurveAnimationt extends StatefulWidget {
   _CurveAnimationtState createState() => _CurveAnimationtState();
 }
 
-class _CurveAnimationtState extends State<CurveAnimationt>
-    with SingleTickerProviderStateMixin {
+class _CurveAnimationtState extends State<CurveAnimationt> with SingleTickerProviderStateMixin {
   AnimationController controller; //动画控制器
   CurvedAnimation curved; //曲线动画，动画插值，
   bool forward = true;
@@ -16,8 +15,7 @@ class _CurveAnimationtState extends State<CurveAnimationt>
   @override
   void initState() {
     super.initState();
-    controller = new AnimationController(
-        vsync: this, duration: const Duration(seconds: 2));
+    controller = new AnimationController(vsync: this, duration: const Duration(seconds: 2));
     curved = new CurvedAnimation(parent: controller, curve: Curves.bounceOut);
   }
 
