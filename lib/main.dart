@@ -20,12 +20,11 @@ void main() {
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
   runApp(
-    // DevicePreview(
-    //   enabled: true,
-    //   builder: (context) => MyApp(), // Wrap your app
-    // ),
-     MyApp()
-  );
+      // DevicePreview(
+      //   enabled: true,
+      //   builder: (context) => MyApp(), // Wrap your app
+      // ),
+      MyApp());
 }
 
 class MyApp extends StatelessWidget {

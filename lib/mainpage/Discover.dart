@@ -27,6 +27,7 @@ import 'package:wechat/state/redux/redux_main.dart';
 import 'package:wechat/state/setstate/myhome_state.dart';
 import 'package:wechat/state/stream/count_page.dart';
 import 'package:wechat/widget/test_main.dart';
+import 'package:wechat/widget/test_state.dart';
 
 class Discover extends StatefulWidget {
   @override
@@ -88,7 +89,26 @@ class _DiscoverState extends State<Discover> {
     _list.add(_provider3Widget(context));
     _list.add(_provider4Widget(context));
     _list.add(_testMainWidget(context));
+    _list.add(_testStateWidget(context));
     return _list;
+  }
+
+  Widget _testStateWidget(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+          return TestState();
+        }));
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 1.0, color: Colors.blueAccent),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+        ),
+        alignment: Alignment.center,
+        child: Text('TestState', style: TextStyle(color: Colors.blue, fontSize: 13.0)),
+      ),
+    );
   }
 
   Widget _testMainWidget(BuildContext context) {
@@ -632,8 +652,7 @@ class _DiscoverState extends State<Discover> {
       itemBuilder: (BuildContext context, int index) {
         return getItemContainer(datas[index]);
       },
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 100, mainAxisSpacing: 20.0, crossAxisSpacing: 10.0),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 100, mainAxisSpacing: 20.0, crossAxisSpacing: 10.0),
     );
   }
 

@@ -15,17 +15,17 @@ class _KeyPrincipleState extends State<KeyPrinciple> {
     // StatefulContainer(key: UniqueKey()),
     // StatefulContainer(key: UniqueKey()),
 
-    StatefulContainer(),
-    StatefulContainer(),
+    // StatefulContainer(),
+    // StatefulContainer(),
 
-    // StatelessContainer(),
-    // StatelessContainer()
+    StatelessContainer(),
+    StatelessContainer()
   ];
 
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('深入浅出Keys', style: new TextStyle(color: Colors.white)),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('深入浅出Keys', style: TextStyle(color: Colors.white)),
         backgroundColor: ThemeColors.currentColorTheme,
         elevation: 0.0,
       ),
@@ -61,6 +61,7 @@ class StatefulContainer extends StatefulWidget {
 
 class _StatefulContainerState extends State<StatefulContainer> {
   final Color color = RandomColor().randomColor();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -74,20 +75,21 @@ class _StatefulContainerState extends State<StatefulContainer> {
 
 class StatelessContainer extends StatelessWidget {
   final Color color = RandomColor().randomColor();
+
   Widget build(BuildContext context) {
-    // return new Scaffold(
-    //   // appBar: new AppBar(
-    //   //   title: new Text('深入浅出Keys', style: new TextStyle(color: Colors.white)),
+    // return  Scaffold(
+    //   // appBar:  AppBar(
+    //   //   title:  Text('深入浅出Keys', style:  TextStyle(color: Colors.white)),
     //   //   backgroundColor: ThemeColors.currentColorTheme,
     //   //   elevation: 0.0,
     //   // ),
-    //   body: new Container(
+    //   body:  Container(
     //     width: 100,
     //     height: 100,
     //     color: ThemeColors.currentColorTheme,
     //   ),
     // );
-    return new Container(
+    return Container(
       margin: EdgeInsets.all(10),
       width: 100,
       height: 100,
