@@ -20,17 +20,16 @@ class _CountPageState extends State<CountPage> {
   }
 
   void lintener() {
-    StreamTransformer transformer =
-        StreamTransformer<int, String>.fromHandlers(handleData: (value, sink) {
+    StreamTransformer transformer = StreamTransformer<int, String>.fromHandlers(handleData: (value, sink) {
       if (value == 1) {
         sink.add("ssssss");
       } else {
         sink.addError("tttttt");
       }
     });
-    _controller.stream.transform(transformer).listen(
-        (data) => print("== " + data),
-        onError: (err) => print("++ " + err));
+    _controller.stream
+        .transform(transformer)
+        .listen((data) => print("== " + data), onError: (err) => print("++ " + err));
   }
 
   @override

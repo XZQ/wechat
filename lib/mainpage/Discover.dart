@@ -39,6 +39,12 @@ class _DiscoverState extends State<Discover> {
   List<Widget> _list = [];
 
   @override
+  void didUpdateWidget(covariant Discover oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (_list.isNotEmpty) _list.clear();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return gridViewCount();
   }
@@ -96,9 +102,7 @@ class _DiscoverState extends State<Discover> {
   Widget _testStateWidget(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (ctx) {
-          return TestState();
-        }));
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => TestState()));
       },
       child: Container(
         decoration: BoxDecoration(
@@ -652,7 +656,8 @@ class _DiscoverState extends State<Discover> {
       itemBuilder: (BuildContext context, int index) {
         return getItemContainer(datas[index]);
       },
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 100, mainAxisSpacing: 20.0, crossAxisSpacing: 10.0),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 100, mainAxisSpacing: 20.0, crossAxisSpacing: 10.0),
     );
   }
 
